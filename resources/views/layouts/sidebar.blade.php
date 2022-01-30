@@ -12,7 +12,7 @@
           <li class="{{ (request()->is('/form')) ? 'active' : '' }}"><a class="nav-link" href="/form"><i class="far fa-file-alt"></i> <span>Form Member</span></a></li>
         <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
           <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
-            <i class="fas fa-rocket"></i> Documentation
+            <i class="fas fa-rocket"></i> Information
           </a>
         </div>
     </aside>
