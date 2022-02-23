@@ -6,35 +6,32 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
+          <th scope="col">No</th>
+          <th scope="col">NIK</th>
+          <th scope="col">Nama</th>
+          <th scope="col">Kelas</th>
+          <th scope="col">Tanggal</th>
+          <th scope="col">Agama</th>
         </tr>
       </thead>
       <tbody>
+        <?php $no = 1; ?>
+          @foreach ($siswas as $siswa)
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <th scope="row">{{$no}}</th>
+          <td>{{$siswa->nik}}</td>
+          <td>{{$siswa->nama}}</td>
+          <td>{{$siswa->kelas}}</td>
+          <td>{{$siswa->tgl_lahir}}</td>
+          <td>{{$siswa->agama}}</td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
+        <?php $no++; ?>
+         @endforeach
       </tbody>
     </table>
     <div class="card-footer text-right">
       <a href="/form"><button class="btn btn-primary">Add Member</button></a>
     </div>
+    {!! $siswas->links() !!}
   </div>
 @endsection

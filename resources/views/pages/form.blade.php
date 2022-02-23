@@ -2,53 +2,55 @@
 @section('headline','Create New Member')
 @section('title','Register Form')
 @section('content') 
-<div class="card-body">
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputEmail4">Email</label>
-          <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+<form action="/simpanSiswa" method="POST">
+    {{ csrf_field() }}
+    <div class="card">
+      <div class="card-body">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="nik">NIK</label>
+            <input type="text" class="form-control" id="nik" placeholder="NIK" name="nik">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="nama">Nama</label>
+            <input type="text" class="form-control" id="nama" placeholder="Nama" name="nama">
+          </div>
         </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Password</label>
-          <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="kelas">Kelas</label>
+            <select id="kelas" class="form-control" name="kelas">
+              <option selected>Pilih Salah Satu</option>
+              <option>XII-RPL 1</option>
+              <option>XII-RPL 2</option>
+              <option>XII-MM 1</option>
+              <option>XII-MM 2</option>
+              <option>XII-TKJ 1</option>
+              <option>XII-TKJ 2</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputCity">Tanggal</label>
+            <input type="date" class="form-control" id="inputCity" name="tgl_lahir" >
         </div>
-      </div>
-      <div class="form-group">
-        <label for="inputAddress">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-      </div>
-      <div class="form-group">
-        <label for="inputAddress2">Address 2</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-      </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputCity">City</label>
-          <input type="text" class="form-control" id="inputCity">
+          <div class="form-group col-md-4"">
+            <label for="agama">Agama</label>
+            <select id="agama" class="form-control" name="agama">
+              <option selected>Pilih Salah Satu</option>
+              <option>Islam</option>
+              <option>Protestan</option>
+              <option>Katolik</option>
+              <option>Budha</option>
+              <option>Hindu</option>
+              <option>Konghuchu</option>
+            </select>
+            </div>
+          </div>
         </div>
-        <div class="form-group col-md-4">
-          <label for="inputState">State</label>
-          <select id="inputState" class="form-control">
-            <option selected>Choose...</option>
-            <option>...</option>
-          </select>
-        </div>
-        <div class="form-group col-md-2">
-          <label for="inputZip">Zip</label>
-          <input type="text" class="form-control" id="inputZip">
-        </div>
-      </div>
-      <div class="form-group mb-0">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            Check me out
-          </label>
-        </div>
-      </div>
+          <div class="card-footer">
+            <button class="btn btn-primary">Submit</button>
+          </div>
     </div>
-    <div class="card-footer">
-      <button class="btn btn-primary">Submit</button>
-    </div>
+</form>
 
 @endsection

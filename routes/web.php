@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\simpanSiswa;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.dashboard');
-});
-Route::get('/form', function () {
-    return view('pages.form');
-})->name('form');
+// Route::get('/', function () {
+//     return view('pages.dashboard');
+// });
+// Route::get('/form', function () {
+//     return view('pages.form');
+// })->name('form');
+Route::get('/', [SiswaController::class, 'index']);
+Route::get('/form', [SiswaController::class, 'form']);
+Route::post('/simpanSiswa', [SiswaController::class, 'simpanSiswa']);
