@@ -2,6 +2,7 @@
 @section('headline', 'Perjalanan Data')
 @section('title', 'Member Data')
 @section('content')
+
     <div class="card-body">
         <table class="table">
             <thead>

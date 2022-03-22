@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Register &mdash; Stisla</title>
+  <title>Login &mdash; Stisla</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -18,7 +19,7 @@
 </head>
 
 <body>
-  <div id="app" >
+  <div id="app">
     <section class="section">
       <div class="container mt-5">
         <div class="row">
@@ -28,45 +29,49 @@
             </div>
 
             <div class="card card-primary">
-              <div class="card-header"><h4>Register</h4></div>
+              <div class="card-header">
+                <h4>Login</h4>
+              </div>
 
               <div class="card-body">
-                <form method="POST" action="/simpanRegister" class="needs-validation" novalidate="">
-                    {{ csrf_field() }}
-                    <div class="form-group">
-                      <div class="d-block">
-                        <label for="nama" class="control-label">Nama</label>
-                      </div>
-                      <input id="nama" type="nama" class="form-control" name="nama" tabindex="2" required>
-                      <!-- @if($errors->has('nama'))
-                        <div class="error">{{ $errors->first('nama') }}</div>
-                      @endif -->
-                      <div class="invalid-feedback">
-                        please fill in your name
-                      </div>
+                <form method="POST" action="/postLogin" class="needs-validation" novalidate="">
+                  {{ csrf_field() }}
+                  <div class="form-group">
+                    <div class="d-block">
+                      <label for="nama" class="control-label">Nama</label>
                     </div>
-
-                    <div class="form-group">
-                    <label for="nik">NIK</label>
-                    <input id="nik" type="nik" class="form-control" name="nik" tabindex="1" required autofocus>
-                    <!-- @if($errors->has('nik'))
-                        <div class="error">{{ $errors->first('nik') }}</div>
-                      @endif -->
+                    <input id="nama" type="nama" class="form-control" name="nama" tabindex="1" required autofocus>
                     <div class="invalid-feedback">
-                      Please fill in your nik
+                      please fill in your name
                     </div>
                   </div>
 
-                  <!-- <div class="form-group">
-                      <div class="d-block">
-                        <label for="email" class="control-label">email</label>
-                      </div>
-                      <input id="email" type="email" class="form-control" name="email" tabindex="2" required>
-                      <div class="invalid-feedback">
-                        please fill in your email
-                      </div>
-                    </div> -->
+                  <div class="form-group">
+                    <div class="d-block">
+                      <label for="email" class="control-label">email</label>
+                    </div>
+                    <input id="email" type="text" class="form-control" name="email" tabindex="2" required>
+                    <div class="invalid-feedback">
+                      please fill in your email
+                    </div>
+                  </div>
 
+
+
+                  <div class="form-group">
+                    <div class="d-block">
+                      <label for="password" class="control-label">password</label>
+                      <!-- <div class="float-right">
+                        <a href="auth-forgot-nama.html" class="text-small">
+                          Forgot Password?
+                        </a>
+                      </div> -->
+                    </div>
+                    <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
+                    <div class="invalid-feedback">
+                      please fill in your password
+                    </div>
+                  </div>
 
                   <!-- <div class="form-group">
                     <div class="custom-control custom-checkbox">
@@ -74,21 +79,19 @@
                       <label class="custom-control-label" for="remember-me">Remember Me</label>
                     </div>
                   </div> -->
-                  
-                    <div class="form-group">
+
+                  <div class="form-group">
                     <div class="btn-group mb-6 col-12" role="group" aria-label="Basic example">
-                      <!-- <a href="/user" class="btn btn-danger">Kembali</a> -->
-                      <button type="submit" class="btn btn-primary">Register</button>
+                      <button type="submit" class="btn btn-primary">Login</button>
                     </div>
-                    </div>
-                    <div class="mt-5 text-center">
-                      Have an account? <a href="/">Login </a>
-                    </div>
+
+                  </div>
                 </form>
-                  
+
+
               </div>
             </div>
-            
+
             <div class="simple-footer">
               Copyright &copy; Stisla 2018
             </div>
@@ -114,4 +117,5 @@
 
   <!-- Page Specific JS File -->
 </body>
+
 </html>
